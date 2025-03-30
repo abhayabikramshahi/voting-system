@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Voting System</title>
+</head>
+<body>
+    <h1>Vote for a Candidate</h1>
+    <form action="/vote" method="POST">
+        <input type="radio" name="option" value="Alex Johnson" required> Alex Johnson <br>
+        <input type="radio" name="option" value="Sophia Carter" required> Sophia Carter <br>
+        <input type="radio" name="option" value="Daniel Smith" required> Daniel Smith <br>
+        <input type="radio" name="option" value="Olivia Williams" required> Olivia Williams <br>
+        <button type="submit">Vote</button>
+    </form>
+
+    <h2>Results:</h2>
+    <ul>
+        <li>Alex Johnson: <%= options.find(o => o.option === "Alex Johnson")?.votes || 0 %> votes</li>
+        <li>Sophia Carter: <%= options.find(o => o.option === "Sophia Carter")?.votes || 0 %> votes</li>
+        <li>Daniel Smith: <%= options.find(o => o.option === "Daniel Smith")?.votes || 0 %> votes</li>
+        <li>Olivia Williams: <%= options.find(o => o.option === "Olivia Williams")?.votes || 0 %> votes</li>
+    </ul>
+</body>
+</html>
